@@ -573,8 +573,3 @@ section { position: relative; }
   .club__content h2, .news__content h2 { font-size: clamp(1.8rem, 8vw, 2.8rem); }
   .club__content, .news__content { padding: 0 1rem; }
 }
-
-@media (prefers-reduced-motion: reduce) {
-  .hero { height: 100vh; }
-  .float, .hero__scroll, .footer__marquee { animation: none; }
-}

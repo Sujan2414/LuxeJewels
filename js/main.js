@@ -196,8 +196,7 @@ if (grid) {
   window.addEventListener("resize", () => { measure(); computeTarget(); });
   window.addEventListener("load", () => { measure(); computeTarget(); });
 
-  if (reduce) { measure(); apply(1); }       // static end-state for reduced motion
-  else requestAnimationFrame(frame);
+  requestAnimationFrame(frame);
 })();
 
 /* ============ Scroll-expand video showcase (in-page scrub — no scroll hijack) ============ */
