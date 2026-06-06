@@ -214,6 +214,9 @@ section { position: relative; }
 @media (max-width: 768px) {
   .sxp { height: 220vh; }
   .sxp__date { font-size: 1.15rem; }
+  .sxp__word { font-size: clamp(1.8rem, 8vw, 3rem); }
+  .sxp__cap { width: 78%; bottom: 6%; }
+  .sxp__cap p { font-size: 0.72rem; line-height: 1.5; }
 }
 
 .hero__scroll {
@@ -292,18 +295,16 @@ section { position: relative; }
 
 /* ============ Trending ============ */
 .trending { max-width: 1280px; margin: 0 auto; padding: 6rem 2rem 7rem; }
-.trending__head {
-  display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 3rem;
-}
+.trending__head { margin-bottom: 3rem; }
 .trending__head-left h2 { font-size: clamp(2.2rem, 4.5vw, 3.2rem); font-weight: 500; color: var(--ink); }
 .trending__subtitle {
   color: var(--ink-soft); font-size: 0.95rem; margin-top: 0.8rem; max-width: 500px; line-height: 1.55;
 }
 .trending__link {
+  display: inline-block; margin-top: 1.4rem;
   font-size: 0.85rem; font-weight: 500; letter-spacing: 0.04em;
   color: var(--ink); border-bottom: 1px solid var(--ink); padding-bottom: 2px;
-  text-decoration: none; align-self: flex-end; transition: opacity 0.3s;
-  white-space: nowrap; margin-bottom: 0.4rem;
+  text-decoration: none; transition: opacity 0.3s; white-space: nowrap;
 }
 .trending__link:hover { opacity: 0.6; }
 
@@ -540,8 +541,15 @@ section { position: relative; }
   .purchase__steps { grid-template-columns: 1fr; gap: 2rem; }
   .purchase__head h2 { font-size: clamp(1.8rem, 6vw, 2.6rem); }
 
+  /* Trending carousel — bring nav buttons on-screen (they sit at -23px on desktop) */
+  .trending__btn { width: 40px; height: 40px; background: rgba(11,11,12,0.85); }
+  .trending__btn--prev { left: 6px; }
+  .trending__btn--next { right: 6px; }
+  .trending__btn svg { width: 16px; height: 16px; }
+
   /* Footer */
-  .footer__cols { grid-template-columns: 1fr 1fr; gap: 2rem 1rem; padding: 0 1.5rem; }
+  .footer__cols { grid-template-columns: 1fr 1fr; gap: 2.4rem 1rem; padding: 0 1.5rem; }
+  .footer__brand { grid-column: 1 / -1; }   /* brand spans full width, links sit in a tidy 2-col grid */
   .footer__marquee { font-size: clamp(2.5rem, 10vw, 5rem); }
   .footer__bottom { flex-direction: column; gap: 0.5rem; text-align: center; padding: 1.5rem; }
   .footer .brand__logo { height: 32px; }
@@ -567,7 +575,7 @@ section { position: relative; }
 
   .purchase { padding: 0 1rem 3rem; }
 
-  .footer__cols { grid-template-columns: 1fr; gap: 2rem; padding: 0 1rem; }
+  .footer__cols { grid-template-columns: 1fr 1fr; gap: 2.2rem 1rem; padding: 0 1.2rem; }
   .footer__bottom { padding: 1.5rem 1rem; }
 
   .club__content h2, .news__content h2 { font-size: clamp(1.8rem, 8vw, 2.8rem); }
