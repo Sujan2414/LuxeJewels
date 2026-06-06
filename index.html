@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LUXE Jewels — Where Luxury Finds Its True Form</title>
+  <meta name="description" content="LUXE Jewels — fine jewelry designed to be admired, crafted to be remembered." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <!-- Navigation -->
+  <header class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="#" class="brand" aria-label="LUXE Jewels">
+        <img src="assets/logo-black.png" alt="LUXE Jewels" class="brand__logo" />
+      </a>
+      <nav class="nav__links">
+        <a href="#categories">Rings</a>
+        <a href="#categories">Necklaces</a>
+        <a href="#trending">Bags</a>
+        <a href="#eclipse">Eclipse</a>
+        <a href="#" class="nav__search" aria-label="Search"></a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ============ HERO — scroll effect ============ -->
+  <section class="hero" id="hero">
+    <div class="hero__pin">
+      <!-- floating rings: BACK layer (behind hero, blurred) -->
+      <div class="floats floats--back" id="floatsBack"></div>
+
+      <!-- floating rings: FRONT layer (in front of hero, sharp) -->
+      <div class="floats" id="floats"></div>
+
+      <!-- center card that crossfades, then spreads into a 5-card row, then tilts -->
+      <div class="cardrow" id="cardrow">
+        <div class="rowcard" data-i="0"><img src="assets/hero4.png" alt="" /></div>
+        <div class="rowcard" data-i="1"><img src="assets/hero3.png" alt="" /></div>
+        <div class="rowcard rowcard--mid" data-i="2">
+          <img class="cf is-active" src="assets/hero1.png" alt="" />  <!-- 1st / intro: necklace box -->
+          <img class="cf" src="assets/hero2.png" alt="" />
+          <img class="cf" src="assets/hero3.png" alt="" />
+          <img class="cf" src="assets/hero5.png" alt="" />            <!-- last / expanded: red signature shot -->
+        </div>
+        <div class="rowcard" data-i="3"><img src="assets/hero2.png" alt="" /></div>
+        <div class="rowcard" data-i="4"><img src="assets/hero1.png" alt="" /></div>
+      </div>
+
+      <!-- initial centered heading -->
+      <div class="hero__intro" id="intro">
+        <h2>Where Luxury Finds Its True Form</h2>
+      </div>
+
+      <!-- giant headline that sweeps in: white + mix-blend-difference inverts over art -->
+      <div class="hero__marquee" id="marquee">
+        <h1>Designed&nbsp;to&nbsp;be&nbsp;admired,&nbsp;crafted&nbsp;to&nbsp;be&nbsp;remembered</h1>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Eclipse Collection ============ -->
+  <section class="eclipse reveal" id="eclipse">
+    <div class="eclipse__title">
+      <p class="eyebrow">Featured</p>
+      <h2>Eclipse<br />Collection</h2>
+    </div>
+    <div class="eclipse__card">
+      <img src="assets/el-eclipse.png" alt="Eclipse collection" />
+    </div>
+    <div class="eclipse__desc">
+      <p>A study in shadow and shine — sculptural pieces that catch the light from every angle and hold it.</p>
+      <a href="#" class="link-arrow">Explore →</a>
+    </div>
+  </section>
+
+  <!-- ============ Scroll-expand video showcase (in-page, scroll-scrubbed) ============ -->
+  <section class="sxp" id="sxp">
+    <div class="sxp__pin">
+      <!-- background fades out as the video expands -->
+      <div class="sxp__bg" data-sxp-bg>
+        <img src="assets/px-back.jpg" alt="" />
+        <div class="sxp__bg-tint"></div>
+      </div>
+
+      <!-- live video that grows with scroll -->
+      <div class="sxp__media" data-sxp-media>
+        <video data-sxp-video
+          src="https://assets.mixkit.co/videos/5222/5222-720.mp4"
+          poster="assets/hero3.png"
+          autoplay muted loop playsinline preload="auto"
+          disablepictureinpicture></video>
+        <div class="sxp__overlay" data-sxp-overlay></div>
+        <div class="sxp__meta">
+          <p class="sxp__date" data-sxp-date></p>
+          <p class="sxp__cue" data-sxp-cue></p>
+        </div>
+      </div>
+
+      <!-- title splits and slides apart over the video -->
+      <div class="sxp__title">
+        <h2 class="sxp__word" data-sxp-first>Crafted</h2>
+        <h2 class="sxp__word" data-sxp-rest>Brilliance</h2>
+      </div>
+
+      <!-- caption revealed once fully expanded -->
+      <div class="sxp__cap" data-sxp-cap>
+        <p>Hand-set stones chosen for the way they hold light — fine jewellery, made to be admired up close and remembered long after.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Elara Club (dark) ============ -->
+  <section class="club">
+    <img class="club__bg" src="assets/hero5.png" alt="" />
+    <div class="club__overlay"></div>
+    <div class="club__content reveal">
+      <p class="eyebrow eyebrow--light">The LUXE Club</p>
+      <h2>Where luxury<br />becomes belonging</h2>
+      <p class="club__text">Members enjoy first access to new collections, private viewings, and pieces made to order in our atelier.</p>
+      <a href="#" class="btn btn--light">Become a Member</a>
+    </div>
+  </section>
+
+  <!-- ============ 2 Collection Categories ============ -->
+  <section class="categories" id="categories">
+    <a href="#" class="catcard">
+      <div class="catcard__media"><img src="assets/el-cat-rings.png" alt="Rings" /></div>
+      <div class="catcard__overlay"></div>
+      <div class="catcard__content">
+        <h3>Rings</h3>
+        <p>Lightweight, comfortable, and expertly crafted to add sophistication to any look.</p>
+        <span class="catcard__link">Browse collection →</span>
+      </div>
+    </a>
+    <a href="#" class="catcard">
+      <div class="catcard__media"><img src="assets/el-cat-neck.png" alt="Necklaces" /></div>
+      <div class="catcard__overlay"></div>
+      <div class="catcard__content">
+        <h3>Necklaces</h3>
+        <p>Designed to stand out, premium metals and timeless designs for effortless luxury.</p>
+        <span class="catcard__link">Browse collection →</span>
+      </div>
+    </a>
+  </section>
+
+  <!-- ============ Trending ============ -->
+  <section class="trending" id="trending">
+    <div class="trending__head">
+      <div class="trending__head-left">
+        <h2>Trending</h2>
+        <p class="trending__subtitle">Discover what everyone’s loving right now — our most popular pieces, handpicked based on what’s trending with Elara customers this season.</p>
+      </div>
+      <a href="#" class="trending__link">Browse collection →</a>
+    </div>
+    <div class="trending__carousel">
+      <button class="trending__btn trending__btn--prev" id="trendingPrev" aria-label="Previous products">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 19l-7-7 7-7"/></svg>
+      </button>
+      <div class="trending__grid" id="trendingGrid">
+        <!-- product cards injected by JS -->
+      </div>
+      <button class="trending__btn trending__btn--next" id="trendingNext" aria-label="Next products">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 5l7 7-7 7"/></svg>
+      </button>
+      <div class="trending__dots" id="trendingDots">
+        <span class="trending__dot trending__dot--active"></span>
+        <span class="trending__dot"></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ News / Premier ============ -->
+  <section class="news">
+    <img class="news__bg" src="assets/hero2.png" alt="" />
+    <div class="news__overlay"></div>
+    <div class="news__content reveal">
+      <p class="eyebrow eyebrow--light">What's new</p>
+      <h2>LUXE Premier<br />2026</h2>
+      <p class="news__text">Our most ambitious collection yet — limited editions photographed for the season campaign.</p>
+      <a href="#" class="btn btn--light">Watch the film</a>
+    </div>
+  </section>
+
+  <!-- ============ Customer Benefits ============ -->
+  <section class="benefits reveal">
+    <div class="benefits__head">
+      <p class="eyebrow">Why LUXE</p>
+      <h2>Your benefits</h2>
+    </div>
+    <div class="benefits__grid">
+      <div class="benefit">
+        <span class="benefit__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1 3h13v13H1z"/><path d="M14 8h4l3 3v5h-7"/><circle cx="5.5" cy="18.5" r="2"/><circle cx="17.5" cy="18.5" r="2"/></svg></span>
+        <span class="benefit__no">01</span><h4>Complimentary shipping</h4><p>Free insured delivery on every order, worldwide.</p>
+      </div>
+      <div class="benefit">
+        <span class="benefit__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 3v6c0 5-3.5 8.5-8 11-4.5-2.5-8-6-8-11V5z"/><path d="M9 12l2 2 4-4"/></svg></span>
+        <span class="benefit__no">02</span><h4>Lifetime warranty</h4><p>Every piece is guaranteed against defects, for life.</p>
+      </div>
+      <div class="benefit">
+        <span class="benefit__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/><circle cx="12" cy="15.5" r="1.3"/></svg></span>
+        <span class="benefit__no">03</span><h4>Secure payment</h4><p>Encrypted checkout with all major methods accepted.</p>
+      </div>
+      <div class="benefit">
+        <span class="benefit__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 1 3 6.7"/><path d="M3 21v-5h5"/></svg></span>
+        <span class="benefit__no">04</span><h4>30-day returns</h4><p>Changed your mind? Return within 30 days, no questions.</p>
+      </div>
+      <div class="benefit">
+        <span class="benefit__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 4 13C4 7 11 3 20 4c1 9-3 16-9 16z"/><path d="M11 20c0-5 2-8 6-11"/></svg></span>
+        <span class="benefit__no">05</span><h4>Ethical sourcing</h4><p>Conflict-free stones and recycled precious metals.</p>
+      </div>
+      <div class="benefit">
+        <span class="benefit__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.2 4.6L19 9l-3.5 3.3.9 5.2L12 15l-4.4 2.5.9-5.2L5 9l4.8-1.4z"/></svg></span>
+        <span class="benefit__no">06</span><h4>Atelier service</h4><p>Resizing, engraving and repairs by our master jewelers.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Purchase Process ============ -->
+  <section class="purchase reveal">
+    <div class="purchase__head">
+      <p class="eyebrow">Simple</p>
+      <h2>How to purchase</h2>
+    </div>
+    <div class="purchase__steps">
+      <div class="step"><span class="step__no">1</span><h4>Choose</h4><p>Browse collections and find the piece that speaks to you.</p></div>
+      <div class="step"><span class="step__no">2</span><h4>Customize</h4><p>Select size, metal and engraving to make it yours.</p></div>
+      <div class="step"><span class="step__no">3</span><h4>Receive</h4><p>We craft and deliver it to your door, beautifully boxed.</p></div>
+    </div>
+  </section>
+
+  <!-- ============ Footer ============ -->
+  <footer class="footer">
+    <div class="footer__marquee" id="footerMarquee">
+      <span>LUXE Jewels — LUXE Jewels — LUXE Jewels — LUXE Jewels —&nbsp;</span>
+      <span>LUXE Jewels — LUXE Jewels — LUXE Jewels — LUXE Jewels —&nbsp;</span>
+    </div>
+    <div class="footer__cols">
+      <div class="footer__col footer__brand">
+        <a href="#" class="brand" aria-label="LUXE Jewels">
+          <img src="assets/logo-white.png" alt="LUXE Jewels" class="brand__logo" />
+        </a>
+        <p>Fine jewelry, designed to be admired and crafted to be remembered.</p>
+      </div>
+      <div class="footer__col"><h4>Shop</h4><a href="#">Rings</a><a href="#">Necklaces</a><a href="#">Bags</a><a href="#">Eclipse</a></div>
+      <div class="footer__col"><h4>About</h4><a href="#">Our story</a><a href="#">The Club</a><a href="#">Journal</a></div>
+      <div class="footer__col"><h4>Support</h4><a href="#">Shipping</a><a href="#">Returns</a><a href="#">Warranty</a><a href="#">Contact</a></div>
+      <div class="footer__col"><h4>Social</h4><a href="#">Instagram</a><a href="#">Threads</a><a href="#">Pinterest</a></div>
+    </div>
+    <div class="footer__bottom">
+      <span>© 2026 LUXE Jewels. All rights reserved.</span>
+      <span>Clone built from Figma for educational purposes.</span>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

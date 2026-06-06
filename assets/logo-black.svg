@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 80" fill="#1c1c1c">
+  <!-- LUXE text -->
+  <text x="110" y="48" text-anchor="middle" font-family="'Times New Roman', 'Georgia', serif" font-size="52" font-weight="700" letter-spacing="6" fill="#1c1c1c">LUXE</text>
+  <!-- Diamond accent between U and X -->
+  <polygon points="110,18 114,24 110,30 106,24" fill="#1c1c1c"/>
+  <!-- Small diamonds flanking JEWELS -->
+  <polygon points="62,64 64,67 62,70 60,67" fill="#1c1c1c"/>
+  <text x="110" y="70" text-anchor="middle" font-family="'Times New Roman', 'Georgia', serif" font-size="14" letter-spacing="8" fill="#1c1c1c">JEWELS</text>
+  <polygon points="158,64 160,67 158,70 156,67" fill="#1c1c1c"/>
+</svg>
