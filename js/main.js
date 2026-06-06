@@ -222,6 +222,15 @@ if (grid) {
     const play = () => { const p = video.play(); if (p && p.catch) p.catch(() => {}); };
     video.addEventListener("pause", play);
     play();
+    
+    // Bypass iOS Low Power Mode autoplay block by playing on first user touch
+    const forcePlay = () => {
+      play();
+      window.removeEventListener("touchstart", forcePlay);
+      window.removeEventListener("click", forcePlay);
+    };
+    window.addEventListener("touchstart", forcePlay, { passive: true });
+    window.addEventListener("click", forcePlay, { passive: true });
   }
 
   function apply(p) {
