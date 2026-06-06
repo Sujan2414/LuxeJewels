@@ -280,3 +280,29 @@ const io = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.12 });
 document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
+
+/* ============ Mobile Menu Toggle ============ */
+const hamburger = document.getElementById("navHamburger");
+const mobileMenu = document.getElementById("mobileMenu");
+const closeMenu = document.getElementById("mobileMenuClose");
+const menuLinks = document.querySelectorAll(".mobile-menu__links a");
+
+if (hamburger && mobileMenu && closeMenu) {
+  hamburger.addEventListener("click", () => {
+    mobileMenu.classList.add("is-open");
+    document.body.style.overflow = "hidden"; // Prevent scrolling
+  });
+
+  closeMenu.addEventListener("click", () => {
+    mobileMenu.classList.remove("is-open");
+    document.body.style.overflow = "";
+  });
+
+  menuLinks.forEach(link => {
+    link.addEventListener("click", () => {
+      mobileMenu.classList.remove("is-open");
+      document.body.style.overflow = "";
+    });
+  });
+}
+

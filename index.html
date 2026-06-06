@@ -24,8 +24,33 @@
         <a href="#eclipse">Eclipse</a>
         <a href="#" class="nav__search" aria-label="Search"></a>
       </nav>
+      <!-- Hamburger button (mobile only) -->
+      <button class="nav__hamburger" id="navHamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </header>
+
+  <!-- Mobile menu overlay -->
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu__header">
+      <a href="#" class="brand" aria-label="LUXE Jewels">
+        <img src="assets/logo-white.png" alt="LUXE Jewels" class="brand__logo" />
+      </a>
+      <button class="mobile-menu__close" id="mobileMenuClose" aria-label="Close menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18"/><path d="M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <nav class="mobile-menu__links">
+      <a href="#categories">Rings</a>
+      <a href="#categories">Necklaces</a>
+      <a href="#trending">Bags</a>
+      <a href="#eclipse">Eclipse</a>
+    </nav>
+    <div class="mobile-menu__footer">
+      <a href="#" class="btn btn--light">Become a Member</a>
+    </div>
+  </div>
 
   <!-- ============ HERO — scroll effect ============ -->
   <section class="hero" id="hero">

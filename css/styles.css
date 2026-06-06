@@ -414,22 +414,166 @@ section { position: relative; }
 .reveal { opacity: 0; transform: translateY(38px); transition: opacity 0.9s var(--ease), transform 0.9s var(--ease); }
 .reveal.in { opacity: 1; transform: translateY(0); }
 
-/* ============ Responsive ============ */
-@media (max-width: 900px) {
-  .nav__links { gap: 1.2rem; }
-  .nav__links a:not(.nav__search) { display: none; }
-  .hero { height: 420vh; }
-  .hero__marquee h1 { font-size: 22vw; }
-  .hero__card { width: 46vw; height: 62vw; }
-  .float { width: 22vw; }
-  .eclipse { grid-template-columns: 1fr; text-align: center; justify-items: center; }
-  .categories { grid-template-columns: 1fr; }
-  .trending__btn { display: none; }
-  .benefits__grid { grid-template-columns: 1fr; }
-  .purchase__steps { grid-template-columns: 1fr; gap: 2rem; }
-  .footer__cols { grid-template-columns: 1fr 1fr; gap: 2.5rem 1rem; }
-  .grcard { width: 38vw; }
+/* ============ Hamburger (hidden on desktop) ============ */
+.nav__hamburger {
+  display: none;
+  background: none; border: none; cursor: pointer;
+  width: 28px; height: 20px; position: relative;
+  flex-direction: column; justify-content: space-between;
+  padding: 0;
 }
+.nav__hamburger span {
+  display: block; width: 100%; height: 2px;
+  background: var(--ink); border-radius: 2px;
+  transition: transform 0.3s var(--ease), opacity 0.3s;
+}
+
+/* ============ Mobile Menu Overlay ============ */
+.mobile-menu {
+  display: none;              /* JS toggles via .is-open */
+  position: fixed; inset: 0;
+  z-index: 200; background: var(--ink);
+  flex-direction: column;
+  padding: 1.1rem 1.5rem 2rem;
+  opacity: 0; transition: opacity 0.35s var(--ease);
+}
+.mobile-menu.is-open {
+  display: flex; opacity: 1;
+}
+.mobile-menu__header {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: 3rem;
+}
+.mobile-menu__header .brand__logo { height: 36px; }
+.mobile-menu__close {
+  background: none; border: none; cursor: pointer;
+  width: 36px; height: 36px; color: #fff;
+  display: flex; align-items: center; justify-content: center;
+}
+.mobile-menu__close svg { width: 24px; height: 24px; }
+.mobile-menu__links {
+  display: flex; flex-direction: column; gap: 0;
+  flex: 1;
+}
+.mobile-menu__links a {
+  display: block; text-decoration: none; color: #fff;
+  font-family: var(--serif); font-weight: 600;
+  font-size: clamp(2rem, 8vw, 3rem); line-height: 1.1;
+  letter-spacing: -0.02em;
+  padding: 0.8rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  transition: opacity 0.3s;
+}
+.mobile-menu__links a:hover { opacity: 0.6; }
+.mobile-menu__footer {
+  margin-top: auto; padding-top: 2rem;
+  display: flex; justify-content: center;
+}
+
+/* ============ Responsive — Tablet ============ */
+@media (max-width: 1024px) {
+  .eclipse { grid-template-columns: 1fr; text-align: center; justify-items: center; gap: 2rem; }
+  .eclipse__desc { text-align: center; margin: 0 auto; }
+  .footer__cols { grid-template-columns: 1fr 1fr 1fr; }
+}
+
+/* ============ Responsive — Mobile ============ */
+@media (max-width: 768px) {
+  /* Nav */
+  .nav__links { display: none; }
+  .nav__hamburger { display: flex; }
+  .nav__inner { padding: 0.9rem 1.2rem; }
+  .brand__logo { height: 34px; }
+
+  /* Hero */
+  .hero { height: 350vh; }
+  .hero__marquee h1 { font-size: 20vw; }
+  .rowcard { width: clamp(140px, 36vw, 220px); border-radius: 12px; }
+  .hero__intro h2 { font-size: clamp(1.4rem, 5.5vw, 2.2rem); }
+
+  /* SXP video */
+  .sxp { height: 200vh; }
+  .sxp__date { font-size: 1rem; }
+  .sxp__word { font-size: clamp(1.8rem, 7vw, 3rem); }
+  .sxp__cap p { font-size: 0.88rem; }
+  .sxp__media { border-radius: 12px; max-width: 92vw; }
+
+  /* Eclipse */
+  .eclipse {
+    grid-template-columns: 1fr; text-align: center;
+    justify-items: center; padding: 4rem 1.5rem; gap: 2rem;
+  }
+  .eclipse__card { width: min(320px, 85vw); height: auto; aspect-ratio: 3/4; }
+  .eclipse__title h2 { font-size: clamp(2rem, 7vw, 3rem); }
+  .eclipse__desc { text-align: center; margin: 0 auto; }
+
+  /* Categories */
+  .categories {
+    grid-template-columns: 1fr; padding: 4rem 1.5rem; gap: 1rem;
+  }
+  .catcard { aspect-ratio: 4/5; border-radius: 12px; }
+  .catcard__content { padding: 1.5rem; }
+  .catcard__content h3 { font-size: clamp(1.6rem, 6vw, 2.4rem); }
+
+  /* Club / News */
+  .club, .news { height: auto; min-height: 70vh; padding: 4rem 0; }
+  .club__content h2, .news__content h2 { font-size: clamp(2rem, 7vw, 3.2rem); }
+  .club__content, .news__content { padding: 0 1.5rem; }
+  .club__text, .news__text { font-size: 0.9rem; }
+
+  /* Trending */
+  .trending { padding: 4rem 1.5rem 5rem; }
+  .trending__head { flex-direction: column; align-items: flex-start; gap: 1rem; }
+  .trending__head-left h2 { font-size: clamp(1.8rem, 6vw, 2.6rem); }
+  .trending__subtitle { font-size: 0.88rem; }
+  .trending__btn { display: none; }
+  .tcard { flex: 0 0 72vw; }
+  .tcard__name { font-size: 0.88rem; }
+
+  /* Benefits */
+  .benefits { padding: 4rem 1.5rem; }
+  .benefits__grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+  .benefits__head h2 { font-size: clamp(1.8rem, 6vw, 2.6rem); }
+
+  /* Purchase */
+  .purchase { padding: 0 1.5rem 4rem; }
+  .purchase__steps { grid-template-columns: 1fr; gap: 2rem; }
+  .purchase__head h2 { font-size: clamp(1.8rem, 6vw, 2.6rem); }
+
+  /* Footer */
+  .footer__cols { grid-template-columns: 1fr 1fr; gap: 2rem 1rem; padding: 0 1.5rem; }
+  .footer__marquee { font-size: clamp(2.5rem, 10vw, 5rem); }
+  .footer__bottom { flex-direction: column; gap: 0.5rem; text-align: center; padding: 1.5rem; }
+  .footer .brand__logo { height: 32px; }
+}
+
+/* ============ Responsive — Small mobile ============ */
+@media (max-width: 480px) {
+  .hero { height: 300vh; }
+  .hero__marquee h1 { font-size: 18vw; }
+  .rowcard { width: clamp(120px, 34vw, 180px); border-radius: 10px; }
+
+  .eclipse__card { width: 90vw; }
+  .eclipse { padding: 3rem 1rem; }
+
+  .categories { padding: 3rem 1rem; }
+  .catcard__content { padding: 1.2rem; }
+
+  .trending { padding: 3rem 1rem 4rem; }
+  .tcard { flex: 0 0 78vw; }
+
+  .benefits { padding: 3rem 1rem; }
+  .benefits__grid { grid-template-columns: 1fr; }
+
+  .purchase { padding: 0 1rem 3rem; }
+
+  .footer__cols { grid-template-columns: 1fr; gap: 2rem; padding: 0 1rem; }
+  .footer__bottom { padding: 1.5rem 1rem; }
+
+  .club__content h2, .news__content h2 { font-size: clamp(1.8rem, 8vw, 2.8rem); }
+  .club__content, .news__content { padding: 0 1rem; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .hero { height: 100vh; }
   .float, .hero__scroll, .footer__marquee { animation: none; }
